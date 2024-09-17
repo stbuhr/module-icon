@@ -1,0 +1,52 @@
+:root {
+  --dark-blue: #230066;
+  --header-icon-height: 12em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 2em;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.header-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--header-icon-height) * 10 / 17.32);
+  height: var(--header-icon-height);
+  margin-left: calc(var(--header-icon-height) * 3 / 17.32);
+  color: white;
+  background: var(--dark-blue);
+  border-radius: 1em / 0.5em;
+}
+.header-icon::before,
+.header-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+.header-icon::before {
+  transform: rotate(60deg);
+}
+.header-icon::after {
+  transform: rotate(-60deg);
+}
+.header-icon svg {
+  width: 90%;
+  height: 90%;
+}
